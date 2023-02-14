@@ -44,18 +44,18 @@ public class UpdateHoKhau {
 		});
 
 		Map<Integer, String> mapIDToTenNhanKhau = new TreeMap<>();
-		Map<Integer, String> mapIDToSDT = new TreeMap<>();
+		Map<Integer, String> mapIDToSex = new TreeMap<>();
 		List<NhanKhauModel> listNhanKhau = new NhanKhauService().getListNhanKhau();
 		listNhanKhau.stream().forEach(nhankhau -> {
 			mapIDToTenNhanKhau.put(nhankhau.getId(), nhankhau.getTen());
-			mapIDToSDT.put(nhankhau.getId(), nhankhau.getSdt());
+			mapIDToSex.put(nhankhau.getId(), nhankhau.getSex());
 		});
 
 		tfDiaChi.setText(hoKhauModel.getDiaChi());
 		tfMaHo.setText(Integer.toString(hoKhauModel.getMaHo()));
 		tfSoThanhVien.setText(Integer.toString(hoKhauModel.getSoThanhvien()));
 		tfTenChuHo.setText(mapIDToTenNhanKhau.get(mapMahoToID.get(hoKhauModel.getMaHo())));
-		tfSDT.setText(mapIDToSDT.get(mapMahoToID.get(hoKhauModel.getMaHo())));
+		tfSDT.setText(mapIDToSex.get(mapMahoToID.get(hoKhauModel.getMaHo())));
 	}
 
 	public void updateHoKhau(ActionEvent event) throws ClassNotFoundException, SQLException {

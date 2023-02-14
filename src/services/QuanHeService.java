@@ -31,12 +31,12 @@ public class QuanHeService {
 	}
 
 	// cheked
-	public boolean del(int maHo, int idThanhVien) throws ClassNotFoundException, SQLException {
+	public boolean del(int maHo) throws ClassNotFoundException, SQLException {
 //		String sql = "DELETE FROM quan_he WHERE  MaHo='" + maHo + "' AND IDThanhVien = '" + idThanhVien + "';";
 		Connection connection = MysqlConnection.getMysqlConnection();
 //		PreparedStatement preparedStatement = connection.prepareStatement(sql);
 //		preparedStatement.executeUpdate();
-		String sql = "UPDATE ho_khau set SoThanhVien = SoThanhVien - 1 where maho='" + maHo + "';";
+		String sql = "UPDATE ho_khau set SoThanhVien = SoThanhVien - 1 where MaHo='" + maHo + "';";
 		PreparedStatement preparedStatement = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
 		preparedStatement.executeUpdate();
 		preparedStatement.close();

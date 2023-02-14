@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="481.0" prefWidth="727.0" styleClass="wrap" stylesheets="@../../source/Form.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.admin.AddTaiKhoan">
+   <children>
+      <AnchorPane layoutX="42.0" layoutY="25.0" prefHeight="432.0" prefWidth="643.0" styleClass="wrap-in" stylesheets="@../../source/Form.css">
+         <children>
+            <Label layoutX="73.0" layoutY="86.0" styleClass="text" text="Mã tài khoản" />
+            <TextField fx:id="tfMaTaiKhoan" layoutX="205.0" layoutY="80.0" prefHeight="39.0" prefWidth="353.0" styleClass="field" />
+            <Label layoutX="73.0" layoutY="148.0" styleClass="text" text="Username" />
+            <TextField fx:id="tfTenTaiKhoan" layoutX="205.0" layoutY="141.0" prefHeight="39.0" prefWidth="353.0" styleClass="field" />
+            <Label layoutX="73.0" layoutY="209.0" styleClass="text" text="Role" />
+            <ComboBox fx:id="cbRole" layoutX="205.0" layoutY="201.0" prefHeight="39.0" prefWidth="353.0" style="-fx-background-color: #71aaa;" styleClass="field" />
+            <Label layoutX="71.0" layoutY="269.0" styleClass="text" text="Password" />
+            <Button layoutX="205.0" layoutY="380.0" mnemonicParsing="false" onAction="#addTaiKhoan" prefHeight="40.0" prefWidth="99.0" text="Thêm" />
+            <Label layoutX="254.0" prefHeight="62.0" prefWidth="233.0" style="-fx-font-size: 25;" styleClass="text" text="THÊM TÀI KHOẢN">
+               <font>
+                  <Font name="Arial Bold" size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="71.0" layoutY="331.0" styleClass="text" text="Tên" />
+            <TextField fx:id="tfName" layoutX="205.0" layoutY="324.0" prefHeight="39.0" prefWidth="353.0" styleClass="field" />
+            <PasswordField fx:id="tfPassword" layoutX="205.0" layoutY="262.0" prefHeight="39.0" prefWidth="353.0" styleClass="field" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

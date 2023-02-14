@@ -1,25 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.String?>
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="600.0" prefWidth="860.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.HomeController">
    <children>
-      <HBox fx:id="hBox" layoutX="50.0" layoutY="-2.0" prefHeight="600.0" prefWidth="811.0">
+      <HBox fx:id="hBox" layoutX="50.0" prefHeight="600.0" prefWidth="860.0">
          <children>
-            <BorderPane fx:id="borderPane" prefHeight="600.0" prefWidth="837.0" />
+            <StackPane fx:id="hp" prefHeight="600.0" prefWidth="860.0">
+               <children>
+                  <VBox prefHeight="600.0" prefWidth="903.0" />
+               </children>
+            </StackPane>
          </children>
       </HBox>
       <VBox fx:id="vBox" layoutX="-215.0" layoutY="-2.0" prefHeight="600.0" prefWidth="214.0" stylesheets="@../source/Home.css">
          <children>
-            <Button mnemonicParsing="false" onAction="#setTrangChu" opacity="0.72" prefHeight="172.0" prefWidth="214.0" style="-fx-background-color: #0867e3;" styleClass="button3" text="Trang chủ" textFill="WHITE">
+            <Button mnemonicParsing="false" onAction="#setTrangChu" prefHeight="172.0" prefWidth="214.0" stylesheets="@../source/Home.css" text="Trang chủ" textFill="WHITE">
                <font>
                   <Font name="Arial Bold" size="25.0" />
                </font>
@@ -30,6 +38,17 @@
                      </image>
                   </ImageView>
                </graphic>
+               <styleClass>
+                  <String fx:value="button3" />
+                  <String fx:value="home-bg" />
+               </styleClass>
+               <effect>
+                  <DropShadow height="0.0" radius="9.5" width="40.0">
+                     <color>
+                        <Color red="0.5929642915725708" green="0.08366471529006958" blue="0.6105263233184814" />
+                     </color>
+                  </DropShadow>
+               </effect>
             </Button>
             <Button fx:id="btnNhanKhau" mnemonicParsing="false" onAction="#setNhanKhau" prefHeight="86.0" prefWidth="218.0" styleClass="button3" stylesheets="@../source/Home.css" text="Nhân khẩu" textFill="WHITE">
                <font>
@@ -45,6 +64,13 @@
                      </image>
                   </ImageView>
                </graphic>
+               <effect>
+                  <DropShadow height="0.0" radius="9.5" width="40.0">
+                     <color>
+                        <Color red="0.062745101749897" green="0.5921568870544434" blue="0.6823529601097107" />
+                     </color>
+                  </DropShadow>
+               </effect>
             </Button>
             <Button fx:id="btnHoKhau" mnemonicParsing="false" onAction="#setHoKhau" prefHeight="86.0" prefWidth="222.0" styleClass="button3" stylesheets="@../source/Home.css" text="Hộ khẩu   " textFill="WHITE">
                <VBox.margin>
@@ -60,6 +86,13 @@
                      </image>
                   </ImageView>
                </graphic>
+               <effect>
+                  <DropShadow height="0.0" radius="9.5" width="40.0">
+                     <color>
+                        <Color red="0.062745101749897" green="0.5921568870544434" blue="0.6823529601097107" />
+                     </color>
+                  </DropShadow>
+               </effect>
             </Button>
             <Button fx:id="btnKhoanPhi" mnemonicParsing="false" onAction="#setKhoanPhi" prefHeight="86.0" prefWidth="217.0" styleClass="button3" stylesheets="@../source/Home.css" text="Khoản phí" textFill="WHITE" wrapText="true">
                <VBox.margin>
@@ -75,6 +108,13 @@
                      </image>
                   </ImageView>
                </graphic>
+               <effect>
+                  <DropShadow height="0.0" radius="9.5" width="40.0">
+                     <color>
+                        <Color red="0.062745101749897" green="0.5921568870544434" blue="0.6823529601097107" />
+                     </color>
+                  </DropShadow>
+               </effect>
             </Button>
             <Button fx:id="btnDongPhi" layoutX="20.0" layoutY="191.0" mnemonicParsing="false" onAction="#setDongPhi" prefHeight="86.0" prefWidth="216.0" styleClass="button3" stylesheets="@../source/Home.css" text="Đóng phí " textFill="WHITE">
                <font>
@@ -90,6 +130,13 @@
                      </image>
                   </ImageView>
                </graphic>
+               <effect>
+                  <DropShadow height="0.0" radius="9.5" width="40.0">
+                     <color>
+                        <Color red="0.062745101749897" green="0.5921568870544434" blue="0.6823529601097107" />
+                     </color>
+                  </DropShadow>
+               </effect>
             </Button>
             <Button fx:id="btnThongKe" layoutX="20.0" layoutY="321.0" mnemonicParsing="false" onAction="#setThongKe" prefHeight="86.0" prefWidth="214.0" styleClass="button3" stylesheets="@../source/Home.css" text="Thống kê" textFill="WHITE">
                <VBox.margin>
@@ -105,6 +152,13 @@
                      </image>
                   </ImageView>
                </graphic>
+               <effect>
+                  <DropShadow height="0.0" radius="9.5" width="40.0">
+                     <color>
+                        <Color red="0.062745101749897" green="0.5921568870544434" blue="0.6823529601097107" />
+                     </color>
+                  </DropShadow>
+               </effect>
             </Button>
          </children>
       </VBox>
@@ -115,12 +169,30 @@
                   <Image url="@../source/show.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="33.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true" translateX="10.0" translateY="24.0">
+            <ImageView fx:id="resetPass" fitHeight="36.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true" translateX="7.0" translateY="20.0">
+               <image>
+                  <Image url="@../source/resetpassword.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <ImageView fx:id="signOutBtn" fitHeight="33.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true" translateX="10.0" translateY="34.0">
                <image>
                   <Image url="@../source/sign-out.png" />
                </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
             </ImageView>
          </children>
+         <effect>
+            <DropShadow height="0.0" radius="3.58" width="16.32">
+               <color>
+                  <Color opacity="0.209726482629776" />
+               </color>
+            </DropShadow>
+         </effect>
       </VBox>
    </children>
 </AnchorPane>

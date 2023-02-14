@@ -20,9 +20,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.Alert.AlertType;
 import javafx.stage.Stage;
 import models.KhoanThuModel;
-import models.NhanKhauModel;
 import services.KhoanThuService;
-import services.NhanKhauService;
 
 public class AddKhoanThu implements Initializable {
 	@FXML
@@ -83,7 +81,7 @@ public class AddKhoanThu implements Initializable {
 		
 		int maKhoanThuInt = Integer.parseInt(tfMaKhoanThu.getText());
 		String tenKhoanThuString = tfTenKhoanThu.getText();
-		double soTienDouble = Double.parseDouble(tfSoTien.getText());
+		int soTienDouble = Integer.parseInt(tfSoTien.getText());
 		int loaiKhoanThu;
 		if(loaiKhoanThu_tmp.equals("Bắt buộc")) {
 			loaiKhoanThu = 1;

@@ -1,27 +1,41 @@
 package models;
 
+import java.time.Year;
+
 public class NhanKhauModel {
 	int id;
 	String cmnd;
 	String ten;
-	int tuoi;
-	String sdt;
+	String ngaysinh;
+	String sex;
+	String from;
+	String to;
 	
 	public NhanKhauModel() {}
 	
-	public NhanKhauModel(String cmnd, String ten, int tuoi , String sdt) {
+	public NhanKhauModel(String cmnd, String ten, String ngaysinh , String sex) {
 		this.cmnd = cmnd;
 		this.ten=ten;
-		this.tuoi=tuoi;
-		this.sdt = sdt;
+		this.ngaysinh=ngaysinh;
+		this.sex = sex;
 	}
 	
-	public NhanKhauModel(int id,String cmnd, String ten, int tuoi , String sdt) {
+	public NhanKhauModel(int id,String cmnd, String ten, String ngaysinh , String sex) {
 		this.id=id;
 		this.cmnd = cmnd;
 		this.ten=ten;
-		this.tuoi=tuoi;
-		this.sdt = sdt;
+		this.ngaysinh=ngaysinh;
+		this.sex = sex;
+	}
+
+	public NhanKhauModel(int id,String cmnd, String ten, String ngaysinh , String sex, String from, String to) {
+		this.id=id;
+		this.cmnd = cmnd;
+		this.ten=ten;
+		this.ngaysinh=ngaysinh;
+		this.sex = sex;
+		this.from=from;
+		this.to=to;
 	}
 
 	public int getId() {
@@ -49,19 +63,43 @@ public class NhanKhauModel {
 	}
 
 	public int getTuoi() {
-		return tuoi;
+		int year = Year.now().getValue();
+		int birthday = Integer.parseInt(ngaysinh.substring(0,4));
+		return year - birthday;
 	}
 
-	public void setTuoi(int tuoi) {
-		this.tuoi = tuoi;
+	
+
+	public String getSex() {
+		return sex;
 	}
 
-	public String getSdt() {
-		return sdt;
+	public void setSex(String sex) {
+		this.sex = sex;
 	}
 
-	public void setSdt(String sdt) {
-		this.sdt = sdt;
+	public String getFrom() {
+		return from;
+	}
+
+	public void setFrom(String from) {
+		this.from = from;
+	}
+
+	public String getTo() {
+		return to;
+	}
+
+	public void setTo(String to) {
+		this.to = to;
+	}
+
+	public String getNgaysinh() {
+		return ngaysinh;
+	}
+
+	public void setNgaysinh(String ngaysinh) {
+		this.ngaysinh = ngaysinh;
 	}
 	
 	

@@ -1,23 +1,24 @@
 /* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
 
 .pane {
-	-fx-background-color : #e8e3f3;
+	-fx-background-color : #fff;
 }
 
 .main-bg {
-    -fx-background-image: url('file:/D:/workspace/quan-ly-thu-tien/src/views/milk.jpeg');
+    -fx-background-image: url("https://media.istockphoto.com/id/831039878/photo/cream-pink-and-white-background.jpg?s=612x612&w=0&k=20&c=62ciVcpEAquE7OKpXKdAaoeQoWut5tyIio6nQ4ntPpI=");
     -fx-background-size: cover;
 }
   
 .button1
 {
--fx-background-color : #e8e3f3;
--fx-background-radius :  15 0 0 15;
+-fx-background-color : #383838;
+-fx-font-size: 14px;
+-fx-text-fill: rgb(179, 179, 179);
+-fx-font-weight: 900;
 }
 .button1:hover
 {
--fx-background-color : #ffffff ;
-
+-fx-text-fill: rgb(255, 255, 255);
 }
 .button1:pressed
 {
@@ -42,16 +43,20 @@
 
 .button3
 {
-    -fx-background-color : #c6c1cf;
+    -fx-background-color : #01987a;
+    -fx-opacity: 0.7;
     -fx-background-radius : 5px;
+    -fx-text-fill: #fff;
+    -fx-font-weight: 900;
 }
 .button3:hover
 {
-    -fx-background-color : #524A7B ;
+    /* -fx-background-color : #524A7B ; */
+    -fx-opacity: 1;
 }
 .button3:pressed
 {
-    -fx-background-color : #2F2B43 ;
+    -fx-background-color : #03886e ;
 }
 
 .button4
@@ -70,9 +75,17 @@
     -fx-background-radius :  30 30 30 30;
 }
 
+.logOutBtn {
+    -fx-background-radius: 20;
+}
+
+.logOutBtn:hover {
+    -fx-opacity: 0.8;
+}
+
 .combo-box
 {
-    -fx-background-color : #c6c1cf;
+    -fx-background-color : #fff;
 }
 .combo-box:hover
 {
@@ -88,18 +101,20 @@
 .table-view .column-header,
 .table-view .column-header-background .filler {
     -fx-cell-size : 20;
-    -fx-background-color:   #610ee7;
+    -fx-background-color:   #01987a;
+    -fx-size: 35px;
 }
 .table-view .column-header .label{
 
    -fx-text-fill: white;
    -fx-font-weight: bold;
    -fx-alignment: CENTER_LEFT;
+   -fx-font-size: 14px;
 }
 .table-view .cell{
    -fx-cell-size: 30;
   -fx-alignment: center-left;
-  -fx-text-fill: #000000;
+  -fx-text-fill: #3e3735;
 }
 
 .table-row-cell:selected {
@@ -135,5 +150,15 @@
     -fx-alignment:CENTER
 }
 
+.table-row-cell:odd .text {
+    -fx-fill: #0e927d; 
+}
 
+.table-row-cell .text {
+    -fx-font-weight: 700;
+}
 
+.bg {
+    -fx-background-image: url(./bgform.jpeg);
+    -fx-background-size: cover;
+}

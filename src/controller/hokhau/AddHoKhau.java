@@ -1,14 +1,22 @@
 package controller.hokhau;
 
+import java.net.URL;
 import java.sql.SQLException;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
+import java.util.ResourceBundle;
 import java.util.regex.Pattern;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Alert.AlertType;
 import javafx.stage.Stage;
@@ -21,7 +29,7 @@ import services.HoKhauService;
 import services.NhanKhauService;
 import services.QuanHeService;
 
-public class AddHoKhau {
+public class AddHoKhau implements Initializable {
 	@FXML
 	private TextField tfMaHoKhau;
 	@FXML
@@ -31,11 +39,11 @@ public class AddHoKhau {
 	@FXML
 	private TextField tfTenChuHo;
 	@FXML
-	private TextField tfTuoi;
+	private DatePicker ngaysinh;
 	@FXML
 	private TextField tfCMND;
 	@FXML
-	private TextField tfSoDienThoai;
+	private ComboBox sex;
 
 	@FXML
 	public void addHoKhau(ActionEvent event) throws ClassNotFoundException, SQLException {
@@ -83,14 +91,14 @@ public class AddHoKhau {
 		}
 		// kiem tra ID them moi co bi trung voi nhung ID da ton tai hay khong
 		List<NhanKhauModel> listNhanKhauModels = new NhanKhauService().getListNhanKhau();
-		listNhanKhauModels.stream().forEach(nhankhau -> {
+		for(NhanKhauModel nhankhau : listNhanKhauModels) {
 			if (nhankhau.getId() == Integer.parseInt(tfMaChuHo.getText())) {
-				Alert alert = new Alert(AlertType.WARNING, "ID bị trùng với một người khác!", ButtonType.OK);
+				Alert alert = new Alert(AlertType.WARNING, "Mã chủ hộ trùng với một người khác!", ButtonType.OK);
 				alert.setHeaderText(null);
 				alert.showAndWait();
 				return;
 			}
-		});
+		}
 
 		// kiem tra ten nhap vao
 		// ten nhap vao la chuoi tu 1 toi 50 ki tu
@@ -103,13 +111,6 @@ public class AddHoKhau {
 
 		// kiem tra tuoi nhap vao
 		// tuoi nhap vao nhieu nhat la 1 so co 3 chu so
-		pattern = Pattern.compile("\\d{1,3}");
-		if (!pattern.matcher(tfTuoi.getText()).matches()) {
-			Alert alert = new Alert(AlertType.WARNING, "Hãy nhập vào tuổi hợp lệ!", ButtonType.OK);
-			alert.setHeaderText(null);
-			alert.showAndWait();
-			return;
-		}
 
 		// kiem tra cmnd nhap vao
 		// cmnd nhap vao phai la mot day so tu 1 toi 20 so
@@ -122,26 +123,19 @@ public class AddHoKhau {
 		}
 
 		// kiem tra sdt nhap vao
-		// SDT nhap vao phai khong chua chu cai va nho hon 15 chu so
-		pattern = Pattern.compile("\\d{1,15}");
-		if (!pattern.matcher(tfSoDienThoai.getText()).matches()) {
-			Alert alert = new Alert(AlertType.WARNING, "Hãy nhập vào SĐT hợp lệ!", ButtonType.OK);
-			alert.setHeaderText(null);
-			alert.showAndWait();
-			return;
-		}
+		// SDT nhap vao phai khong chua chu cai va nho hon 15 chu s
 		
 		// ghi nhan cac gia tri khi tat ca deu hop le
 		int maHo = Integer.parseInt(tfMaHoKhau.getText());
 		String diaChi = tfDiaChi.getText();
 		int maChuHo = Integer.parseInt(tfMaChuHo.getText());
 		String tenChuHo = tfTenChuHo.getText();
-		int tuoiChuHo = Integer.parseInt(tfTuoi.getText());
+		String ngayString = ngaysinh.getValue()!=null?ngaysinh.getValue().format(DateTimeFormatter.ofPattern("yyyy-MM-dd")):null;
 		String cmndChuHo = tfCMND.getText();
-		String sdtChuHo = tfSoDienThoai.getText();
+		String sexString = sex.getValue().toString();
 		
 		HoKhauModel hoKhauModel = new HoKhauModel(maHo, 0, diaChi);
-		NhanKhauModel nhanKhauModel = new NhanKhauModel(maChuHo, cmndChuHo, tenChuHo, tuoiChuHo, sdtChuHo);
+		NhanKhauModel nhanKhauModel = new NhanKhauModel(maChuHo, cmndChuHo, tenChuHo, ngayString, sexString);
 		
 		new HoKhauService().add(hoKhauModel);
 		new NhanKhauService().add(nhanKhauModel);
@@ -150,6 +144,14 @@ public class AddHoKhau {
 		
 		Stage stage = (Stage)((Node) event.getSource()).getScene().getWindow();
         stage.close();
+	}
+
+	@Override
+	public void initialize(URL arg0, ResourceBundle arg1) {
+		// TODO Auto-generated method stub
+		ObservableList<String> list = FXCollections.observableArrayList("Nam", "Nữ", "Khác");
+		sex.setItems(list);
+		sex.getSelectionModel().selectFirst();
 	}
 
 }

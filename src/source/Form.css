@@ -1,0 +1,68 @@
+.button {
+    -fx-border-color:  #2aaa91;
+    -fx-background-color: #fff;
+    -fx-background-radius: 50;
+    -fx-border-radius: 50;
+    -fx-font-weight: 700;
+    -fx-border-width: 2px;
+    -fx-text-fill: #2aaa91;
+}
+
+.button:hover {
+    -fx-background-color: #2aaa91;
+    -fx-text-fill: #fff;
+}
+
+.text {
+    -fx-text-fill: #fff;
+    -fx-font-weight:700;
+    -fx-font-size: 16px;
+}
+
+.field {
+    -fx-border-color:  #71a4f1;
+    -fx-background-color: #fff;
+    -fx-background-radius: 50;
+    -fx-border-radius: 50;
+    -fx-font-weight: 700;
+    -fx-border-width: 2px;
+}
+
+.wrap {
+    -fx-background-image: url(./bgform.jpeg);
+    -fx-background-size: cover;
+}
+.wrap-in {
+    -fx-background-color: rgba(0,0,0,0.11);
+}
+
+.date-picker .arrow-button {
+    -fx-background-color: #71a4f1;
+    -fx-border-color: #fff;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+
+}
+
+.date-picker .arrow-button .arrow {
+    -fx-background-color: white;
+}
+
+.date-picker > .text-field {
+    -fx-border-color:  #71a4f1;
+    -fx-background-color: #fff;
+    -fx-background-radius: 50;
+    -fx-border-radius: 50;
+}
+
+/* .date-picker .arrow-button .arrow {
+    -fx-background-color: white;
+} */
+
+.diff.date-picker .arrow-button {
+    -fx-background-color: #2aaa91;
+    -fx-border-color: #fff;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+
+}

@@ -9,7 +9,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 import java.util.ResourceBundle;
-import java.util.regex.Pattern;
 
 import javafx.beans.property.ReadOnlyStringWrapper;
 import javafx.collections.FXCollections;
@@ -31,11 +30,9 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
-import models.ChuHoModel;
 import models.KhoanThuModel;
 import models.NhanKhauModel;
 import models.NopTienModel;
-import services.ChuHoService;
 import services.KhoanThuService;
 import services.NhanKhauService;
 import services.NopTienService;
@@ -62,7 +59,7 @@ public class NopTienController implements Initializable {
 	Map<Integer, String> mapIdToTenKhoanThu;
 
 	public void showNopTien() throws ClassNotFoundException, SQLException {
-		listNopTien = new NopTienService().getListNopTien();
+		listNopTien = new NopTienService().getListNopTien(null, null);
 		listKhoanThu = new KhoanThuService().getListKhoanThu();
 		listNhanKhau = new NhanKhauService().getListNhanKhau();
 		listValueTableView = FXCollections.observableArrayList(listNopTien);
@@ -175,7 +172,7 @@ public class NopTienController implements Initializable {
 	public void addNopTien(ActionEvent event) throws IOException, ClassNotFoundException, SQLException {
 		Parent home = FXMLLoader.load(getClass().getResource("/views/noptien/AddNopTien.fxml"));
 		Stage stage = new Stage();
-		stage.setScene(new Scene(home, 800, 600));
+		stage.setScene(new Scene(home));
 		stage.setResizable(false);
 		stage.showAndWait();
 		showNopTien();

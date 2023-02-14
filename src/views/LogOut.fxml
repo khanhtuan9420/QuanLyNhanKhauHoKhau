@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DialogPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<DialogPane prefHeight="234.0" prefWidth="400.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.LogOutController">
+   <header>
+      <StackPane prefHeight="120.0" prefWidth="400.0">
+         <children>
+            <GridPane prefHeight="237.0" prefWidth="400.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints maxHeight="125.79999389648438" minHeight="10.0" prefHeight="104.00000610351563" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="78.59998168945313" minHeight="10.0" prefHeight="24.00001983642578" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <ImageView fitHeight="82.0" fitWidth="98.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER">
+                     <image>
+                        <Image url="@../source/logout.png" />
+                     </image>
+                     <GridPane.margin>
+                        <Insets top="10.0" />
+                     </GridPane.margin>
+                  </ImageView>
+                  <Text fill="#4b9153" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: 700;" text="Bạn có muốn đăng xuất không?" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Text>
+               </children>
+            </GridPane>
+         </children>
+      </StackPane>
+   </header>
+   <content>
+      <AnchorPane prefHeight="104.0" prefWidth="400.0">
+         <children>
+            <Button fx:id="noBtn" layoutX="29.0" layoutY="60.0" mnemonicParsing="false" onAction="#close" prefHeight="38.0" prefWidth="162.0" style="-fx-background-color: linear-gradient(to top left, #ddd, #b2b2b2); -fx-font-weight: 700;" styleClass="logOutBtn" stylesheets="@../source/Main.css" text="NO" textFill="WHITE">
+               <font>
+                  <Font size="13.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button fx:id="yesBtn" layoutX="214.0" layoutY="60.0" mnemonicParsing="false" onAction="#logout" prefHeight="38.0" prefWidth="162.0" style="-fx-background-color: linear-gradient(to top left, #f6999b, #f3c3b8); -fx-font-weight: 700;" styleClass="logOutBtn" stylesheets="@../source/Main.css" text="YES" textFill="WHITE">
+               <font>
+                  <Font size="13.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+         </children>
+      </AnchorPane>
+   </content>
+</DialogPane>

@@ -42,6 +42,12 @@
     -fx-background-color :  linear-gradient(to top right, #385487, #73b2ba);
     -fx-background-radius :  0 0 0 0;
 }
+
+.button3.choose {
+    -fx-background-color: linear-gradient(to top right, #fdaba5, #ff5764);
+    -fx-effect: dropshadow(three-pass-box, #ff5764,15, 0, 0, 0);
+}
+
 .button3:hover
 {
     /* -fx-background-color : #524A7B ; */
@@ -52,6 +58,12 @@
 .button3:pressed
 {
     -fx-background-color : #2F2B43 ;
+}
+
+.button3.home-bg {
+    /* #0867e3 */
+    -fx-background-image: url("https://phunugioi.com/wp-content/uploads/2020/02/mau-background-dep.jpg");
+    -fx-background-size: cover;
 }
 
 .button4
@@ -69,6 +81,9 @@
     -fx-background-color :linear-gradient(to top left, #41951C, #D4CEE3);
     -fx-background-radius :  30 30 30 30;
 }
+
+
+
 
 
 

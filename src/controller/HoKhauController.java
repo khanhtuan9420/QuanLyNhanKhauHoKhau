@@ -12,7 +12,6 @@ import java.util.ResourceBundle;
 import java.util.regex.Pattern;
 
 import controller.hokhau.UpdateHoKhau;
-import controller.khoanthu.UpdateKhoanThu;
 import javafx.beans.property.ReadOnlyStringWrapper;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -34,7 +33,6 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import models.ChuHoModel;
 import models.HoKhauModel;
-import models.KhoanThuModel;
 import models.NhanKhauModel;
 import models.QuanHeModel;
 import services.ChuHoService;
@@ -61,6 +59,8 @@ public class HoKhauController implements Initializable {
 
 	ObservableList<HoKhauModel> listValueTableView;
 	private List<HoKhauModel> listHoKhau;
+
+	
 
 	// Hien thi thong tin ho khau
 	public void showHoKhau() throws ClassNotFoundException, SQLException {
@@ -96,7 +96,7 @@ public class HoKhauController implements Initializable {
 	public void addHoKhau() throws ClassNotFoundException, SQLException, IOException {
 		Parent home = FXMLLoader.load(getClass().getResource("/views/hokhau/AddHoKhau.fxml"));
 		Stage stage = new Stage();
-		stage.setScene(new Scene(home, 800, 600));
+		stage.setScene(new Scene(home));
 		stage.setResizable(false);
 		stage.showAndWait();
 		showHoKhau();
@@ -148,7 +148,7 @@ public class HoKhauController implements Initializable {
 
 	public void searchHoKhau() throws ClassNotFoundException, SQLException {
 		ObservableList<HoKhauModel> listValueTableView_tmp = null;
-		String keySearch = tfSearch.getText();
+		String keySearch = tfSearch.getText().toLowerCase();
 
 		// lay lua chon tim kiem cua khach hang
 		SingleSelectionModel<String> typeSearch = cbChooseSearch.getSelectionModel();
@@ -180,7 +180,7 @@ public class HoKhauController implements Initializable {
 			int index = 0;
 			List<HoKhauModel> listHoKhauModelsSearch = new ArrayList<>();
 			for (HoKhauModel hoKhauModel : listHoKhau) {
-				if (mapIdToTen.get(mapMahoToId.get(hoKhauModel.getMaHo())).contains(keySearch)) {
+				if (mapIdToTen.get(mapMahoToId.get(hoKhauModel.getMaHo())).toLowerCase().contains(keySearch)) {
 					listHoKhauModelsSearch.add(hoKhauModel);
 					index++;
 				}
@@ -211,7 +211,7 @@ public class HoKhauController implements Initializable {
 			int index = 0;
 			List<HoKhauModel> listHoKhau_tmp = new ArrayList<>();
 			for (HoKhauModel hoKhauModel : listHoKhau) {
-				if (hoKhauModel.getDiaChi().contains(keySearch)) {
+				if (hoKhauModel.getDiaChi().toLowerCase().contains(keySearch)) {
 					listHoKhau_tmp.add(hoKhauModel);
 					index++;
 				}
@@ -272,7 +272,7 @@ public class HoKhauController implements Initializable {
 		loader.setLocation(getClass().getResource("/views/hokhau/UpdateHoKhau.fxml"));
 		Parent home = loader.load();
 		Stage stage = new Stage();
-		stage.setScene(new Scene(home, 800, 600));
+		stage.setScene(new Scene(home));
 		UpdateHoKhau updateHoKhau = loader.getController();
 
 		// bat loi truong hop khong hop le

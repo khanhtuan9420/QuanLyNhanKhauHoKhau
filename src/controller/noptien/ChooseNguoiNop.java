@@ -27,7 +27,6 @@ import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.TableColumn.CellDataFeatures;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
-import models.KhoanThuModel;
 import models.NhanKhauModel;
 import models.QuanHeModel;
 import services.NhanKhauService;

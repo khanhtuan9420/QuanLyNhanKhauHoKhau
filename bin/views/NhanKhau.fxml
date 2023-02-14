@@ -1,28 +1,99 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.text.*?>
-<?import javafx.scene.control.*?>
-<?import java.lang.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
 
-<AnchorPane prefHeight="600.0" prefWidth="625.0" styleClass="pane" stylesheets="@../source/Main.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.NhanKhauController">
+<GridPane prefHeight="600.0" prefWidth="701.0" styleClass="pane" stylesheets="@../source/Main.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.NhanKhauController">
+  <columnConstraints>
+    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+  </columnConstraints>
+  <rowConstraints>
+    <RowConstraints maxHeight="294.79999389648435" minHeight="10.0" prefHeight="104.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="468.4" minHeight="10.0" prefHeight="468.4" vgrow="SOMETIMES" />
+  </rowConstraints>
    <children>
-      <TableView fx:id="tvNhanKhau" layoutX="7.0" layoutY="94.0" prefHeight="500.0" prefWidth="500.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="100.0">
-        <columns>
-          <TableColumn fx:id="colMaNhanKhau" prefWidth="95.0" text="Mã nhân khẩu" />
-          <TableColumn fx:id="colTen" prefWidth="147.0" text="Họ và tên" />
-            <TableColumn fx:id="colTuoi" prefWidth="52.0" text="Tuổi" />
+      <TableView fx:id="tvNhanKhau" prefHeight="500.0" prefWidth="626.0" GridPane.rowIndex="1">
+         <columns>
+            <TableColumn fx:id="colMaNhanKhau" prefWidth="95.0" text="Mã nhân khẩu" />
+            <TableColumn fx:id="colTen" prefWidth="147.0" text="Họ và tên" />
+            <TableColumn fx:id="colNgaySinh" prefWidth="52.0" text="Ngày sinh" />
             <TableColumn fx:id="colCMND" prefWidth="116.0" text="CMND" />
-            <TableColumn fx:id="colSDT" prefWidth="121.0" text="SĐT" />
+            <TableColumn fx:id="colSex" prefWidth="121.0" text="Giới tính" />
             <TableColumn fx:id="colMaHo" prefWidth="73.0" text="Mã hộ" />
-        </columns>
+         </columns>
+         <GridPane.margin>
+            <Insets top="10.0" />
+         </GridPane.margin>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
       </TableView>
-      <TextField fx:id="tfSearch" layoutX="7.0" layoutY="49.0" prefHeight="40.0" prefWidth="310.0" AnchorPane.bottomAnchor="510.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="300.0" AnchorPane.topAnchor="50.0" />
-      <ComboBox fx:id="cbChooseSearch" layoutX="333.0" layoutY="49.0" prefHeight="40.0" prefWidth="170.0" AnchorPane.bottomAnchor="510.0" AnchorPane.leftAnchor="330.0" AnchorPane.rightAnchor="125.0" AnchorPane.topAnchor="50.0" />
-      <Button layoutX="514.0" layoutY="49.0" mnemonicParsing="false" onAction="#searchNhanKhau" prefHeight="40.0" prefWidth="110.0" styleClass="button3" stylesheets="@../source/Main.css" text="Tìm kiếm" AnchorPane.bottomAnchor="510.0" AnchorPane.leftAnchor="505.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="50.0" />
-      <Button layoutY="2.0" mnemonicParsing="false" onAction="#addNhanKhau" prefHeight="40.0" prefWidth="200.0" styleClass="button1" stylesheets="@../source/Main.css" text="Thêm nhân khẩu" textAlignment="CENTER" textFill="#2e088d" wrapText="true" AnchorPane.bottomAnchor="555.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="415.0" AnchorPane.topAnchor="5.0" />
-      <Button layoutX="220.0" layoutY="5.0" mnemonicParsing="false" onAction="#delNhanKhau" prefHeight="40.0" prefWidth="195.0" styleClass="button1" stylesheets="@../source/Main.css" text="Xóa nhân khẩu" textAlignment="CENTER" textFill="#2e088d" wrapText="true" AnchorPane.bottomAnchor="555.0" AnchorPane.leftAnchor="215.0" AnchorPane.rightAnchor="215.0" AnchorPane.topAnchor="5.0" />
-      <Button layoutX="387.0" layoutY="2.0" mnemonicParsing="false" onAction="#updateNhanKhau" prefHeight="40.0" prefWidth="200.0" styleClass="button1" stylesheets="@../source/Main.css" text="Cập nhật nhân khẩu" textAlignment="CENTER" textFill="#2e088d" wrapText="true" AnchorPane.bottomAnchor="555.0" AnchorPane.leftAnchor="415.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="5.0" />
+      <GridPane prefWidth="626.0" style="-fx-background-color: #383838; -fx-background-radius: 5;">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="60.79999618530273" minHeight="10.0" prefHeight="41.599996948242186" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="80.79999504089355" minHeight="10.0" prefHeight="69.6000030517578" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <GridPane GridPane.rowIndex="1">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="50.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="30.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="20.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <TextField fx:id="tfSearch" prefHeight="45.0" prefWidth="310.0">
+                     <GridPane.margin>
+                        <Insets bottom="3.0" left="6.0" right="3.0" top="3.0" />
+                     </GridPane.margin>
+                  </TextField>
+                  <ComboBox fx:id="cbChooseSearch" prefHeight="44.0" prefWidth="396.0" GridPane.columnIndex="1">
+                     <GridPane.margin>
+                        <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+                     </GridPane.margin>
+                  </ComboBox>
+                  <Button mnemonicParsing="false" onAction="#searchNhanKhau" prefHeight="45.0" prefWidth="209.0" styleClass="button3" stylesheets="@../source/Main.css" text="Tìm kiếm" GridPane.columnIndex="2">
+                     <GridPane.margin>
+                        <Insets bottom="3.0" left="3.0" right="6.0" top="3.0" />
+                     </GridPane.margin>
+                  </Button>
+               </children>
+            </GridPane>
+            <GridPane prefHeight="41.0" prefWidth="854.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="143.39997100830078" minWidth="10.0" prefWidth="130.39996337890625" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="169.3999954223633" minWidth="10.0" prefWidth="151.99999999999997" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="150.40001220703124" minWidth="10.0" prefWidth="119.99998779296874" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="147.2000122070312" minWidth="10.0" prefWidth="117.60003662109375" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="106.39996337890625" minWidth="10.0" prefWidth="106.39996337890625" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Button mnemonicParsing="false" onAction="#addNhanKhau" prefHeight="40.0" prefWidth="746.0" styleClass="button1" stylesheets="@../source/Main.css" text="Thêm nhân khẩu" textAlignment="CENTER" textFill="#2e088d" wrapText="true" GridPane.halignment="LEFT" />
+                  <Button mnemonicParsing="false" onAction="#updateNhanKhau" prefHeight="40.0" prefWidth="602.0" styleClass="button1" stylesheets="@../source/Main.css" text="Cập nhật nhân khẩu" textAlignment="CENTER" textFill="#2e088d" wrapText="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" />
+                  <Button mnemonicParsing="false" onAction="#delNhanKhau" prefHeight="40.0" prefWidth="434.0" styleClass="button1" stylesheets="@../source/Main.css" text="Xóa nhân khẩu" textAlignment="CENTER" textFill="#2e088d" wrapText="true" GridPane.columnIndex="2" GridPane.halignment="CENTER" />
+                  <Button mnemonicParsing="false" onAction="#addTamVang" prefHeight="30.0" prefWidth="578.0" styleClass="button1" text="Khai tạm vắng" GridPane.columnIndex="3" GridPane.halignment="RIGHT" />
+                  <Button mnemonicParsing="false" onAction="#addTamTru" prefHeight="30.0" prefWidth="131.0" styleClass="button1" text="Khai tạm trú" translateX="-2.0" GridPane.columnIndex="4" GridPane.halignment="RIGHT" />
+               </children>
+            </GridPane>
+         </children>
+      </GridPane>
    </children>
-</AnchorPane>
+   <padding>
+      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+   </padding>
+</GridPane>

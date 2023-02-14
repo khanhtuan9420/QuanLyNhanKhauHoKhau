@@ -37,10 +37,13 @@ public class NopTienService {
 	}
 	
 	// checked
-	public List<NopTienModel> getListNopTien() throws ClassNotFoundException, SQLException{
+	public List<NopTienModel> getListNopTien(String from, String to) throws ClassNotFoundException, SQLException{
 		List<NopTienModel> list = new ArrayList<>();
 		Connection connection = MysqlConnection.getMysqlConnection();
-    	String query = "SELECT * FROM nop_tien";
+    	String query = "SELECT * FROM nop_tien where 1";
+		if(from!=null) query+=" && Ngaythu > '"+from+"'";
+		if(to!=null) query+=" && Ngaythu < '"+to+"'";
+		System.out.println(query);
         PreparedStatement preparedStatement = (PreparedStatement)connection.prepareStatement(query);
         ResultSet rs = preparedStatement.executeQuery();
         while (rs.next()){
